@@ -10,7 +10,10 @@ import { WalletModalProvider } from '@tronweb3/tronwallet-adapter-react-ui';
 import '@tronweb3/tronwallet-adapter-react-ui/style.css';
 
 export default function App({ Component, pageProps }: AppProps) {
-   
+     const adapters = useMemo(function () {
+        const tronLinkAdapter = new TronLinkAdapter();
+        return [tronLinkAdapter];
+    }, []);
 
     /**
      * wrap your app content with WalletProvider and WalletModalProvider
