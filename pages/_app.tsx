@@ -5,8 +5,6 @@ import { WalletDisconnectedError, WalletNotFoundError } from '@tronweb3/tronwall
 // @ts-ignore
 import { toast } from 'react-hot-toast';
 import {
-    BitKeepAdapter,
-    OkxWalletAdapter,
     TokenPocketAdapter,
     TronLinkAdapter,
     WalletConnectAdapter,
@@ -50,10 +48,10 @@ export default function App({ Component, pageProps }: AppProps) {
                 },
             },
         });
-        const bitKeepAdapter = new BitKeepAdapter();
+    
         const tokenPocketAdapter = new TokenPocketAdapter();
-        const okxwalletAdapter = new OkxWalletAdapter();
-        return [tronLinkAdapter, bitKeepAdapter, tokenPocketAdapter, okxwalletAdapter, walletConnectAdapter, ledger];
+     
+        return [tronLinkAdapter, tokenPocketAdapter, walletConnectAdapter, ledger];
     }, []);
 
     /**
